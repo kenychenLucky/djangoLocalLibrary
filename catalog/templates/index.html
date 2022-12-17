@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>图书管理系统</h1>
+
+<p>欢迎来到 <em>图书馆</em>,
+</p>
+<!--
+<p>The tutorial demonstrates how to create a Django skeleton website and application, define URL mappings, views (including Generic List and Detail Views), models and templates.</p>
+
+
+<h2>UML Models</h2>
+<p>An UML diagram of the site's Django model structure is shown below. </p>
+-->
+<div>
+{% load static %}
+<!-- <img src="{% static "images/local_library_model_uml.png" %}" alt="My image" width="600px"> -->
+</div>  
+
+
+<h2>动态内容</h2>
+
+<p>书库具有以下记录计数:</p>
+<ul>
+<li><strong>图书数量:</strong> {{ num_books }}</li>
+<li><strong>借出图书:</strong> {{ num_instances }}</li>
+<li><strong>可借图书:</strong> {{ num_instances_available }}</li>
+<li><strong>作家数:</strong> {{ num_authors }}</li>
+</ul>
+
+
+<p>您已访问此页面 {{ num_visits }} 次数{{ num_visits|pluralize }}.</p>
+
+{% endblock %}
